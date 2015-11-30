@@ -6,7 +6,7 @@ Guru ji zero ,code breaker ica, root_devil, google_warrior,INX_r0ot,Darkwolf ind
 
 --==[[Love to]]==--
 
-My Father , my Ex Teacher,cold fire hacker,Mannu, ViKi,Jagriti,Suriya Cyber Tyson ,Ashu bhai ji,Soldier Of God,Shafoon,Rehan Manzoor,almas malik, Bhuppi,Mohit, Ffe ^_^,Govind Singh,Shardhanand ,Budhaoo,Don(Deepika kaushik) 
+My Father , my Ex Teacher,cold fire hacker,Mannu, ViKi,Jagriti,Suriya Cyber Tyson ,Ashu bhai ji,Rafay Baloch,Soldier Of God,Shafoon,Rehan Manzoor,almas malik, Bhuppi,Mohit, Ffe ^_^,Govind Singh,Shardhanand ,Budhaoo,Don(Deepika kaushik) 
 
 --==[[Interface Desgined By]]==--
 
